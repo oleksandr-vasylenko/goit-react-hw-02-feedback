@@ -1,9 +1,11 @@
-// import { GlobalStyles } from '../../GlobalStyles';
+import { GlobalStyle } from '../../GlobalStyle';
 import { Component } from 'react';
 import { Section } from '../Section/Section';
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Statistics } from '../Statistics/Statistics';
 import { Notification } from '../Notification/Notification';
+
+import { Card } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -34,7 +36,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <>
+      <Card>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -55,8 +57,8 @@ export class App extends Component {
             ></Statistics>
           )}
         </Section>
-        {/* <GlobalStyles /> */}
-      </>
+        <GlobalStyle />
+      </Card>
     );
   }
 }
